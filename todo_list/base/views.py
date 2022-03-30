@@ -11,6 +11,9 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login #when register, logged in already
 
 from .models import Task
+from .forms import Create_Form
+
+
 
 class CustomLoginView(LoginView):
     template_name = 'base/login.html'
@@ -68,16 +71,16 @@ class TaskDetail(LoginRequiredMixin, DetailView):
 
 class TaskCreate(LoginRequiredMixin, CreateView):
     model = Task
-    fields = ['title', 'description', 'complete']
+    form_class = Create_Form
     success_url = reverse_lazy('tasks') #go back to list
 
-    def form_valid(self, form):
-        form.instance.user = self.request.user
-        return super(TaskCreate, self).form_valid(form)
+    def form_valid(self, Create_Form):
+        Create_Form.instance.user = self.request.user
+        return super(TaskCreate, self).form_valid(Create_Form)
 
 class TaskUpdate(LoginRequiredMixin, UpdateView):
     model = Task
-    fields = ['title', 'description', 'complete']
+    form_class = Create_Form
     success_url = reverse_lazy('tasks') #go back to list
 
 
@@ -86,5 +89,9 @@ class DeleteView(LoginRequiredMixin, DeleteView):
     fields = '__all__'
     context_object_name = 'task'   # your own name for the list as a template variable
     success_url = reverse_lazy('tasks') #go back to list
+
+
+
+    
 
 

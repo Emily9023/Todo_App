@@ -27,6 +27,10 @@ html {
     
 }
 
+a {
+    text-decoration: none;
+}
+
 * p {
     
     text-align: justify;
@@ -61,7 +65,7 @@ body{
 }
 
 .container {
-    max-width: 550px;
+    max-width: 700px;
     font-weight: 300;
     margin: auto;
     background-color: #fff;
@@ -95,12 +99,11 @@ body{
 }
 
 .task-title {
-    display: flex;
+    display: inline-flex;
     padding: 20px;
 }
 
 .task-title a {
-    text-decoration: none;
     color: #4b5156;
     margin-left: 10px;
 }
@@ -159,6 +162,15 @@ label {
 
 .card-body {
     padding: 20px;
+}
+
+.date {
+    padding: 20px;
+    display: inline-flex;
+    position: relative;
+    float: right;
+    font-size: 60%;
+    text-decoration: none;
 }
 
 /*--------- BUTTONS ----------- */

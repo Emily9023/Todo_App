@@ -35,18 +35,37 @@
         <div class="task-wrapper">
             {%if task.complete%}
                 <div class="task-title">
-                    <div class="task-complete-icon"></div>
+                    <a class="add-icon" href="{% url 'tasks' %}"><div class="task-complete-icon"></div></a>
                     <i><s><a href="{%url 'task-update' task.id %}">{{task}}</a></s></i>
                 </div>
-                <a class="delete-link" href="{%url 'task-delete' task.id %}"> &#215 </a>
+                <div class="date">
+                    {%if task.date%}
+                            <i><a href="{%url 'task-update' task.id %}">{{task.date}}</a></i>
+                        
+                    {%endif%}
+
+                </div>
+                <div style="display: inline-block; ">
+                    <a class="delete-link" href="{%url 'task-delete' task.id %}"> &#215 </a>
         
+                </div>
+                
             {%else%}
                 <div class="task-title">
                     <a class="add-icon" href="{% url 'tasks' %}"><div class="task-incomplete-icon"></div></a>
                     <i><a href="{%url 'task-update' task.id %}">{{task}}</a></i>
                 </div>
-                <a class="delete-link" href="{%url 'task-delete' task.id %}"> &#215 </a>
+                <div class="date">
+                    {%if task.date%}
+                            <i><a href="{%url 'task-update' task.id %}">{{task.date}}</a></i>
+                        
+                    {%endif%}
+
+                </div>
+                <div style="display: inline-block; ">
+                    <a class="delete-link" href="{%url 'task-delete' task.id %}"> &#215 </a>
         
+                </div>
             {%endif%}
             </div>
     {%empty%}
