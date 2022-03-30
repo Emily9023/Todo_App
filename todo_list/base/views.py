@@ -41,12 +41,18 @@ class RegisterPage(FormView):
         return super(RegisterPage, self).get(*args, **kwargs)
 
 
+class TaskSelection(LoginRequiredMixin, generic.ListView):
+    models = Task
+    context_object_name = 'lists'   # your own name for the list as a template variable
+    queryset = Task.objects.filter() # Get 5 books containing the title war
+    template_name = 'base/list_selection.html'  # Specify your own template name/location
+
 
 class TaskList(LoginRequiredMixin, generic.ListView):
     models = Task
     context_object_name = 'tasks'   # your own name for the list as a template variable
     queryset = Task.objects.filter() # Get 5 books containing the title war
-    template_name = 'base/todo_list.html'  # Specify your own template name/location
+    template_name = 'base/task_list.html'  # Specify your own template name/location
 
     #filters for the tasks for the authenticated user
     def get_context_data(self, **kwargs):
