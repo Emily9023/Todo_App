@@ -23,7 +23,7 @@
 <div id="search-add-wrapper">
     <form method="GET" style="margin-top: 20px; display: flex;">
         <input type="text" name="search-area" value="{{search_input}}">
-        <input class="btn" type="submit" value="Search">
+        <input class="btn btn-invisible" type="submit" value="Search">
     </form>
     <a id="add-link" href="{% url 'task-create' %}">&#x2b</a>
 </div>
@@ -42,7 +42,7 @@
         
             {%else%}
                 <div class="task-title">
-                    <div class="task-incomplete-icon"></div>
+                    <a class="add-icon" href="{% url 'tasks' %}"><div class="task-incomplete-icon"></div></a>
                     <i><a href="{%url 'task-update' task.id %}">{{task}}</a></i>
                 </div>
                 <a class="delete-link" href="{%url 'task-delete' task.id %}"> &#215 </a>

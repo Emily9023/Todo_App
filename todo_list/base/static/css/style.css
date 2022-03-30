@@ -157,80 +157,38 @@ label {
     display: block;
 }
 
+.card-body {
+    padding: 20px;
+}
 
 /*--------- BUTTONS ----------- */
 
 .btn {
-    border: 1px solid #757575;
-    background-color: #FFF;
-    color: #EB796F;
     padding: 10px;
+    margin-left: 10px;
     font-size: 14px;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 75%;
+    display: inline-block;
+    padding: 10px;
     text-decoration: none;
+
 }
 
 .btn:link,
 .btn:visited {
-    font-size: 75%;
-    text-transform: uppercase;
-    display: inline-block;
-    padding: 20px 60px;
-    font-weight: 300;
-    text-decoration: none;
-    border-radius: 0px;
-    transition: background-color .2s, border .2s, color .2s;
-    color: white;
-}
-
-.btn-full:link,
-.btn-full:visited {
-    background-color: #C2D7C8;
-    border: 1px solid #C2D7C8;
-    color: #fff;
-    margin-right: 50px;
-    
-    
-}
-
-.btn-ghost:link,
-.btn-ghost:visited{
-    border: 1px solid #C2D7C8;
-    color: #C2D7C8;
+    border: 1px solid #000;
+    background-color: #FFF;
+    color: #000;
+    transition: background-color 1s, border 1s, color 1s;
 }
 
 
 .btn:hover,
 .btn:active {
-    background-color: #C2D7C8;
-    
-}
-
-.btn-full:hover,
-.btn-full:active {
-    border: 1px solid #dae7de;
-    background-color: #dae7de;
-    
-}
-
-.btn-ghost:hover,
-.btn-ghost:active{
     border: 1px solid #C2D7C8;
+    background: linear-gradient(90deg, #dcf3e3 , #C2D7C8 43%, #C2D7C8 100%);
     color: #fff;
-}
-
-.btn-invisible:link,
-.btn-invisible:visited{
-    color: transparent;
-}
-
-.btn-invisible:hover,
-.btn-invisible:active {
-    color: white;
     
 }
-
-
-
-
